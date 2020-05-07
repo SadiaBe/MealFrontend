@@ -1,38 +1,71 @@
-.App {
-  text-align: center;
+.navbar {
+    text-align: center;
+    background-color: bisque;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.mealscont {
+    background-color: #FFE4E1;
+ }
+.mealcard {
+    padding: 15px;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.mealform{
+    border-radius: 5px;
+}
+.active {
+    padding: 15px;
+    background-color: #E9967A;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.heading {
+    background-color: #E9967A;
+}
+
+/* .mealform {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 10px; 
+} */
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 10px; /* 5px rounded corners */
+}
+
+.mealcard {
+    background-attachment: #E9967A;
+}
+  
+  /* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+  
+  /* Add some padding inside the card container */
+.container {
+    padding: 2px 16px;
+}
+
+img {
+    border-radius: 5px 5px 0 0;
+}
+
+.column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+}
+      
+      /* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;}
+@media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

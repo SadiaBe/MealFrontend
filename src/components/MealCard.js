@@ -13,7 +13,7 @@ render() {
 //       return <CommentCard key={comment.id} comment={comment} />
 //   })
 
-//   the token is showing up as undefined here - maybe becaise nobody is logged in? - didnt add it to state dumbass. 
+//   the token is showing up as undefined here // UPDATE didnt add it to state dumbass. 
 return (
     <div class="row"> 
       <div class="column">
@@ -25,12 +25,12 @@ return (
         </header>
         
         <div className="card mealcard">
-            <p className="date">NEED to add created at here from props</p>
+            <p className="date"></p>
             <h2 className="mealcard-title">{this.props.title}</h2>
-            <p className="body-content">Dish: {title}</p>
-            <p className="body-content">Ingredients: {ingredients}</p>
-            <p className="body-content">Instructions: {instructions}</p>
-            <p className="body-content">By: {username}</p>
+            <h2 className="body-content">Dish: </h2>{title}
+            <h2 className="body-content">Ingredients: </h2> {ingredients}
+            <h2 className="body-content">Instructions: </h2> {instructions}
+            <h2 className="body-content">By:{username}</h2>
             <CommentsContainer 
               comments={this.props.meal.comments}
               user={this.props.user}

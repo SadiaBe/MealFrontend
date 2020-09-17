@@ -50,7 +50,19 @@ class App extends React.Component {
               }
               })
               .then(resp => resp.json())
-              .then(this.handleResp)
+              // .then(this.handleResp)
+              .then((data) => {
+                if (data.token) {
+                  localStorage.setItem("token", data.token)
+                  this.setState({
+                    user: data.user,
+                    token: data.token
+                  }, () => {
+                    this.props.history.push("/mymeals")
+                  })
+                }
+              })
+        
         }
           fetch("http://localhost:3000/meals")
               .then(resp => resp.json())
@@ -79,17 +91,30 @@ class App extends React.Component {
 
 
   handleResp = (resp) => {
-    if (resp.user) {
-      localStorage.token = resp.token
+    if (!resp.error) {
+      localStorage.setItem("token", resp.token)
       this.setState({
         user: resp.user,
-        user_bare: resp.user,
         token: resp.token
       }, () => {
-        // console.log(this.props)
-        this.props.history.push("/mymeals")
+        this.props.history.push("/mealscontainer")
       })
-    } else {
+
+    }
+
+
+    // if (resp.user) {
+    //   localStorage.token = resp.token
+    //   this.setState({
+    //     user: resp.user,
+    //     user_bare: resp.user,
+    //     token: resp.token
+    //   }, () => {
+    //     // console.log(this.props)
+    //     this.props.history.push("/mymeals")
+    //   })
+    // } 
+    else {
       alert(resp.error)
     }
   }

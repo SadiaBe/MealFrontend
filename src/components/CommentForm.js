@@ -5,7 +5,7 @@ class CommentForm extends React.Component {
 
 state = {
     value: ""
-    // userid: this.props.user.id // i know im not supposed to use props to set state just trying something 
+    // userid: this.props.user.id 
 }
 handleChange = (event) => {
     this.setState({value: event.target.value});
